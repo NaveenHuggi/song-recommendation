@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 import ast
+import os
+import requests
 
 # --- Background Styling ---
 st.markdown("""
@@ -47,9 +49,26 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Load Data ---
-new_songs = pickle.load(open('songs.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+
+# --- Load Pickles from Hugging Face ---
+@st.cache_resource
+def load_pickle_from_hf(url, filename):
+    if not os.path.exists(filename):
+        r = requests.get(url)
+        r.raise_for_status()
+        with open(filename, "wb") as f:
+            f.write(r.content)
+    with open(filename, "rb") as f:
+        return pickle.load(f)
+
+
+SONGS_URL = "https://huggingface.co/Naveen2905/song-recommender-model/resolve/main/songs.pkl"
+SIMILARITY_URL = "https://huggingface.co/Naveen2905/song-recommender-model/resolve/main/similarity.pkl"
+
+with st.spinner("⏳ Loading songs and model..."):
+    new_songs = load_pickle_from_hf(SONGS_URL, "songs.pkl")
+    similarity = load_pickle_from_hf(SIMILARITY_URL, "similarity.pkl")
+
 
 # --- Extract Artist & Genre ---
 def extract_info(tags):
@@ -69,6 +88,7 @@ def extract_info(tags):
     genre = parts[-1].split(']')[-1].strip().title()
     return artist_list, genre
 
+
 # --- Recommender Function ---
 def recommend(track_name):
     track_index = new_songs[new_songs['Track Name'] == track_name].index[0]
@@ -85,12 +105,14 @@ def recommend(track_name):
         })
     return recommended_data
 
+
 # --- Session State ---
 if "playing_track" not in st.session_state:
     st.session_state.playing_track = None
     st.session_state.playing_name = None
 if "recommended" not in st.session_state:
     st.session_state.recommended = []
+
 
 # --- Main UI ---
 st.title('🎶 Song Recommender System')
@@ -172,6 +194,7 @@ with tab1:
             if st.button("⏹ Stop", key="stop_button"):
                 st.session_state.playing_track = None
                 st.session_state.playing_name = None
+
 
 # --- Tab 2: Song Details ---
 with tab2:
