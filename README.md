@@ -41,7 +41,7 @@ Clone this repository:
    cd song-recommendation
 
    Install dependencies:
-   pip install -r requirements.txt
+   pip install -r requirements.txt.
    Place songs.pkl and similarity.pkl in the project root.
 
 Run the app:
