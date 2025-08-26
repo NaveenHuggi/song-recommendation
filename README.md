@@ -16,11 +16,16 @@ The app suggests songs based on the selected genre and input song.
 ## 📂 Project Structure  
 
 song-recommendation/
+
 │
 ├── app.py # Main Streamlit app
+
 ├── requirements.txt # Python dependencies
+
 ├── songs.pkl # Song dataset (not in repo)
+
 ├── similarity.pkl # Similarity matrix (not in repo)
+
 └── README.md # Documentation
 
 
