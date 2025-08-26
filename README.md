@@ -16,7 +16,7 @@ The app suggests songs based on the selected genre and input song.
 ## 📂 Project Structure  
 
 song-recommendation/
-
+|
 │
 ├── app.py # Main Streamlit app
 
