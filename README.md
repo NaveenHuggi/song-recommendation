@@ -37,11 +37,12 @@ song-recommendation/
 
 Clone this repository:  
    git clone https://github.com/NaveenHuggi/song-recommendation.git
-   cd song-recommendation
-   Install dependencies:
 
-pip install -r requirements.txt
-Place songs.pkl and similarity.pkl in the project root.
+   cd song-recommendation
+
+   Install dependencies:
+   pip install -r requirements.txt
+   Place songs.pkl and similarity.pkl in the project root.
 
 Run the app:
 streamlit run app.py
