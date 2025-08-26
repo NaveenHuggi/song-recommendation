@@ -35,25 +35,24 @@ song-recommendation/
 
 ## 🛠️ Installation  
 
-1. Clone this repository:  
+Clone this repository:  
    git clone https://github.com/NaveenHuggi/song-recommendation.git
    cd song-recommendation
-  Install dependencies:
+   Install dependencies:
 
 pip install -r requirements.txt
 Place songs.pkl and similarity.pkl in the project root.
 
 Run the app:
-
-bash
-Copy
-Edit
 streamlit run app.py
+
 🌍 Deployment
+
 The app is deployed on Streamlit Cloud:
 🔗 Live Demo
 https://song-recommendation-a3nvdg8g3k5qbj8ctpuk6t.streamlit.app/
 
 📧 Contact
+
 Author: Naveen Huggi
 📩 Contact me if you need the dataset or want to collaborate.
