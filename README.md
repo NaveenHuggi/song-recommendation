@@ -56,4 +56,4 @@ https://song-recommendation-a3nvdg8g3k5qbj8ctpuk6t.streamlit.app/
 📧 Contact
 
 Author: Naveen Huggi
-📩 Contact me if you need the dataset or want to collaborate.
+📩 Contact for collaboration.
