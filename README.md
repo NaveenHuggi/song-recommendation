@@ -1,59 +1,61 @@
-# 🎶 Song Recommendation System  
+# 🎶 Song Recommendation System
 
-An interactive **Music Recommendation Web App** built with **Streamlit**.  
-The app suggests songs based on the selected genre and input song.  
+An interactive **Music Recommendation Web App** built with **Streamlit**.
+The app suggests songs based on the selected genre and input song, utilizing content-based filtering techniques.
 
 ---
 
-## 🚀 Features  
-- Choose a **genre** and search for songs in that genre.  
-- Get **personalized recommendations**.  
-- View **song details** in a clean tab-based UI.  
-- Modern UI with custom background and styling.  
+## 🚀 Features
 
+- **Genre Selection**: Choose from popular genres like Bollywood, Tollywood, Kollywood, Sandalwood, Mollywood, English, and Punjabi.
+- **Smart Search**: Search for your favorite songs within the selected genre.
+- **Personalized Recommendations**: Get top 5 song recommendations based on similarity to your selected track.
+- **Spotify Integration**: Play recommended songs directly within the app (via Spotify embed).
+- **Rich UI**: Clean, tab-based interface with album art, artist details, and a modern dark-themed design.
 
+---
 
-## 📂 Project Structure  
+## 🛠️ Installation & Setup
 
-song-recommendation/
-|
-│
-├── app.py # Main Streamlit app
-
-├── requirements.txt # Python dependencies
-
-├── songs.pkl # Song dataset (not in repo)
-
-├── similarity.pkl # Similarity matrix (not in repo)
-
-└── README.md # Documentation
-
-
-⚠️ **Note**: The `.pkl` files are **not included** in this repository.  
-👉 If you need them, please **contact me directly**.  
-
-
-## 🛠️ Installation  
-
-Clone this repository:  
+1. **Clone the repository:**
+   ```bash
    git clone https://github.com/NaveenHuggi/song-recommendation.git
-
    cd song-recommendation
+   ```
 
-   Install dependencies:
-   pip install -r requirements.txt.
-   Place songs.pkl and similarity.pkl in the project root.
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Run the app:
-streamlit run app.py
+3. **Run the application:**
+   ```bash
+   streamlit run app.py
+   ```
 
-🌍 Deployment
+   > **Note:** On the first run, the application will automatically download the necessary model files (`songs.pkl` and `similarity.pkl`) from Hugging Face. This may take a few moments depending on your internet connection.
 
-The app is deployed on Streamlit Cloud:
-🔗 Live Demo
-https://song-recommendation-a3nvdg8g3k5qbj8ctpuk6t.streamlit.app/
+---
 
-📧 Contact
+## 📂 Project Structure
 
-Author: Naveen Huggi
-📩 Contact for collaboration.
+```
+song-recommendation/
+├── app.py              # Main Streamlit application logic
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+```
+
+---
+
+## 🌍 Live Demo
+
+Check out the live deployment on Streamlit Cloud:
+🔗 [Song Recommendation App](https://song-recommendation-a3nvdg8g3k5qbj8ctpuk6t.streamlit.app/)
+
+---
+
+## 📧 Contact
+
+**Author:** Naveen Huggi
+📩 Feel free to reach out for collaborations or questions!
